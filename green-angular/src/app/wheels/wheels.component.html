@@ -1,0 +1,249 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" class="main-form">
+      <ng-template class="step" matStepLabel></ng-template>
+      <h2>Profildaten eingeben</h2>
+      <br />
+      <mat-radio-group
+        class="type"
+        aria-label="Select an option"
+        formControlName="type"
+        required 
+      >
+        <mat-radio-button value="Privatperson">Privatperson</mat-radio-button
+        ><br /><br />
+        <mat-radio-button value="Firma">Firma</mat-radio-button>
+      </mat-radio-group>
+      <br />
+      <mat-form-field>
+        <mat-label>Vorname</mat-label>
+        <input
+          matInput
+          placeholder="Vorname"
+          type="text"
+          formControlName="Vorname"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Nachname</mat-label>
+        <input
+          matInput
+          placeholder="Nachname"
+          type="text"
+          formControlName="Nachname"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>E-Mail</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="E-Mail"
+          formControlName="EMail"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <h2>Prämie auswählen</h2>
+      <br />
+      <mat-radio-group
+        class="payout"
+        aria-label="Select an option"
+        formControlName="payout"
+      >
+        <mat-radio-button value="8.500 €"
+          ><span class="wrap-mat-radio-label"
+            >8.500 € Sofortauszahlung pro E-Fahrzeug pro Jahr (Fest-Betrag
+            I)zzgl. Wert eines ggf. eingegebenen Gutscheincodes.</span
+          ></mat-radio-button
+        ><br />
+        <p>
+          Wir überprüfen umgehend Ihre Unterlagen und gehen für Sie in Vorkasse,
+          sodass die Überweisung innerhalb von 24 Stunden an Sie ausgelöst wird
+          - unabhängig vom Zeitpunkt und Höhe des Verkaufs Ihrer Quote. Bitte
+          beachten Sie, dass es je nach Bank 1-2 Tage Bearbeitungszeit zwischen
+          den Banken benötigt.
+        </p>
+        <mat-radio-button value="11.500 €"
+          ><span class="wrap-mat-radio-label"
+            >11.500 € pro E-Fahrzeug pro Jahr (Fest-Betrag II) zzgl. Wert eines
+            ggf. eingegebenen Gutscheincodes</span
+          ></mat-radio-button
+        >
+        <p>
+          Wir überprüfen umgehend Ihre Unterlagen und gehen für Sie in Vorkasse,
+          sodass die Überweisung innerhalb von 24 Stunden an Sie ausgelöst wird
+          - unabhängig vom Zeitpunkt und Höhe des Verkaufs Ihrer Quote. Bitte
+          beachten Sie, dass es je nach Bank 1-2 Tage Bearbeitungszeit zwischen
+          den Banken benötigt.
+        </p>
+      </mat-radio-group>
+      <br />
+      <mat-form-field>
+        <mat-label>Zahlungsempfänger</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Zahlungsempfänger"
+          formControlName="Zahlungsempfnger"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>IBAN</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="DE123456789101234567899"
+          formControlName="IBAN"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Gutscheincode (optional)</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Gutscheincode (optional)"
+          formControlName="Gutscheincode"
+        />
+      </mat-form-field>
+      <br />
+      <div>
+        <button mat-button matStepperNext>Weiter</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template class="step" matStepLabel> </ng-template>
+      <br />
+      <h2>Fahrzeugschein hochladen</h2>
+      <p
+        style="
+          color: #fff;
+          font-size: 16px !important;
+          margin-top: 20px !important;
+          text-align: center;
+        "
+      >
+        Bitte laden Sie die Vorder- und Rückseite Ihres Fahrzeugscheins hoch.
+        Bei mehreren Fahrzeugen bitte diesen Upload-Vorgang wiederholen.
+      </p>
+      <br />
+      <br />
+      <div class="upload">
+        <div class="upload-file" style="width: 50%">
+          <mat-label>Upload file</mat-label>
+          <input id="singleFile" formControlName="amount" type="file" />
+        </div>
+        <br />
+        <br />
+        <div class="upload-file" style="width: 50%">
+          <mat-label>Upload file</mat-label>
+          <input id="singleFile" formControlName="stock" type="file" />
+        </div>
+      </div>
+      <br />
+      <br />
+      <p
+        style="
+          color: #00da92;
+          font-size: 14px !important;
+          margin-top: 20px !important;
+        "
+      >
+        Die Zulassungsbescheinigung Teil I (Fahrzeugschein) ist für jedes
+        anzumeldende Elektroauto erforderlich. Nur Autos mit Angabe "Elektro" an
+        der Stelle P.3 im Fahrzeugschein sind zulässig.
+        <br />
+        Wichtig: Die Anmeldung kann nur diejenige Person vornehmen, die auch im
+        Fahrzeugschein als Fahrzeughalter eingetragen ist. Die Voraussetzung für
+        Ihre Prämie ist erfüllt, wenn Ihr Fahrzeug für mindestens einen Tag im
+        entsprechenden Jahr zugelassen ist.
+      </p>
+      <br />
+      <p style="color: #00da92; font-size: 14px !important; margin-left: 20px">
+        *Maximale Dateigröße ist 100 MB. Zulässige Dateiformate sind .jpg und
+        .pdf. Laden Sie die Vorder- und Rückseite als separate Dateien hoch.
+        Bitte achten Sie darauf, dass der Fahrzeugschein eine gute Lesbarkeit
+        aufweist.
+      </p>
+      <div>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext>Weiter</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template class="step" matStepLabel> </ng-template>
+      <br />
+      <h2>Dauer auswählen</h2>
+      <br />
+      <br />
+      <mat-radio-group
+        class="payout"
+        aria-label="Select an option"
+        formControlName="jahre"
+      >
+        <mat-radio-button value="1 Jahr"
+          ><span class="wrap-mat-radio-label"> 1 Jahr</span></mat-radio-button
+        ><br />
+        <p>
+          Wir kümmern uns in diesem Jahr um die Einreichung Ihrer THG-Quote.
+        </p>
+        <mat-radio-button value="2 Jahr"
+          ><span class="wrap-mat-radio-label"> 2 Jahre</span></mat-radio-button
+        >
+        <p>
+          Wenn Sie möchten, übernehmen wir für Sie die nächsten 2 Jahre die
+          Einreichung Ihrer THG-Quote. Hierfür kommen wir jedes Jahr auf’s Neue
+          auf Sie zu und überweisen Ihnen jährlich Ihre Prämie.
+        </p>
+        <mat-radio-button value="3 Jahr"
+          ><span class="wrap-mat-radio-label"> 3 Jahre</span></mat-radio-button
+        >
+        <p>
+          Wenn Sie möchten, übernehmen wir für Sie die nächsten 3 Jahre die
+          Einreichung Ihrer THG-Quote. Hierfür kommen wir jedes Jahr auf’s Neue
+          auf Sie zu und überweisen Ihnen jährlich Ihre Prämie.
+        </p>
+      </mat-radio-group>
+      <br />
+      <br />
+      <div class="checkbox"> 
+      <mat-checkbox class="check" formControlName="check1">
+        Zustimmung der Anmeldung
+        <p>
+          Ich bestimme die greenAir GmbH für die zuvor ausgewählten Jahre an
+          meiner Stelle die Anmeldung der CO2-Einsparung meines E-Autos
+          vorzunehmen und versichere, dass ich für die genannten Jahre noch
+          keine andere Person bzw. keinen anderen Dienstleister für die
+          Anmeldung der CO2-Einsparungen meines E-Autos bestimmt habe und nicht
+          bestimmen werde.
+        </p>
+      </mat-checkbox>
+      <mat-checkbox class="check" formControlName="check2">
+        Zustimmung der Anmeldung
+        <p>
+          Ich habe die allgemeinen Geschäftsbedingungen inkl. der
+          Widerrufsbelehrung sowie die Datenschutzbestimmungen gelesen und
+          akzeptiere diese. Weiterhin bestätige ich, dass die gemachten Angaben
+          der Wahrheit entsprechen.
+        </p>
+      </mat-checkbox>
+    </div>
+      <div>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext>Senden</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
