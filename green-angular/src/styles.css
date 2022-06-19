@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */ 
+@import '../node_modules/alertifyjs/build/css/alertify.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -6,22 +8,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-step-icon {
     font-size: 28px;
     background: #82828200 !important;
-    border: 1px solid #00DA92;
+    border: 1px solid #D9BB37;
     padding: 20px;
 }
 .mat-step-icon-selected {
     
-    background: #00DA92 !important;
+    background: #D9BB37 !important;
 }
 .mat-radio-outer-circle {
     background: #fff;
     padding: 8px;
 }
 .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
-    background-color: #00DA92 !important;
+    background-color: #D9BB37 !important;
 }
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #00DA92;
+    border-color: #D9BB37;
 } 
 .mat-form-field-label {
     color: #fff !important;
@@ -29,4 +31,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mat-checkbox-inner-container {
     margin-top: 0px!important;
+}
+.mat-header-row {
+    border-bottom: 1px solid #616161 !important;
 }

@@ -1,13 +1,13 @@
 <mat-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup" class="main-form">
+    <form #taskForm="ngForm" [formGroup]="firstFormGroup" class="main-form">
       <ng-template class="step" matStepLabel></ng-template>
       <h2>Profildaten eingeben</h2>
       <br />
       <mat-radio-group
         class="type"
         aria-label="Select an option"
-        formControlName="type"
+        formControlName="option"
         required 
       >
         <mat-radio-button value="Privatperson">Privatperson</mat-radio-button
@@ -21,7 +21,17 @@
           matInput
           placeholder="Vorname"
           type="text"
-          formControlName="Vorname"
+          formControlName="name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input
+          matInput
+          placeholder="ID"
+          type="text"
+          formControlName="submission_id"
           required
         />
       </mat-form-field>
@@ -32,7 +42,7 @@
           matInput
           placeholder="Nachname"
           type="text"
-          formControlName="Nachname"
+          formControlName="surname"
           required
         />
       </mat-form-field>
@@ -43,7 +53,29 @@
           matInput
           type="email"
           placeholder="E-Mail"
-          formControlName="EMail"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Unternehmen</mat-label>
+        <input
+          matInput
+          placeholder="Unternehmen"
+          type="text"
+          formControlName="company"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Umsatzsteuer-ID</mat-label>
+        <input
+          matInput
+          placeholder="Umsatzsteuer-ID"
+          type="text"
+          formControlName="c_id"
           required
         />
       </mat-form-field>
@@ -53,7 +85,7 @@
       <mat-radio-group
         class="payout"
         aria-label="Select an option"
-        formControlName="payout"
+        formControlName="price"
       >
         <mat-radio-button value="8.500 €"
           ><span class="wrap-mat-radio-label"
@@ -89,7 +121,7 @@
           matInput
           type="text"
           placeholder="Zahlungsempfänger"
-          formControlName="Zahlungsempfnger"
+          formControlName="payee"
           required
         />
       </mat-form-field>
@@ -100,7 +132,7 @@
           matInput
           type="text"
           placeholder="DE123456789101234567899"
-          formControlName="IBAN"
+          formControlName="iban"
           required
         />
       </mat-form-field>
@@ -111,7 +143,7 @@
           matInput
           type="text"
           placeholder="Gutscheincode (optional)"
-          formControlName="Gutscheincode"
+          formControlName="gift_code"
         />
       </mat-form-field>
       <br />
@@ -141,20 +173,20 @@
       <div class="upload">
         <div class="upload-file" style="width: 50%">
           <mat-label>Upload file</mat-label>
-          <input id="singleFile" formControlName="amount" type="file" />
+          <input id="singleFile" formControlName="img1" type="file" />
         </div>
         <br />
         <br />
         <div class="upload-file" style="width: 50%">
           <mat-label>Upload file</mat-label>
-          <input id="singleFile" formControlName="stock" type="file" />
+          <input id="singleFile" formControlName="img2" type="file" />
         </div>
       </div>
       <br />
       <br />
       <p
         style="
-          color: #00da92;
+          color: #fff;
           font-size: 14px !important;
           margin-top: 20px !important;
         "
@@ -169,7 +201,7 @@
         entsprechenden Jahr zugelassen ist.
       </p>
       <br />
-      <p style="color: #00da92; font-size: 14px !important; margin-left: 20px">
+      <p style="color: #fff; font-size: 14px !important; margin-left: 20px">
         *Maximale Dateigröße ist 100 MB. Zulässige Dateiformate sind .jpg und
         .pdf. Laden Sie die Vorder- und Rückseite als separate Dateien hoch.
         Bitte achten Sie darauf, dass der Fahrzeugschein eine gute Lesbarkeit
@@ -191,7 +223,7 @@
       <mat-radio-group
         class="payout"
         aria-label="Select an option"
-        formControlName="jahre"
+        formControlName="time"
       >
         <mat-radio-button value="1 Jahr"
           ><span class="wrap-mat-radio-label"> 1 Jahr</span></mat-radio-button
@@ -219,7 +251,7 @@
       <br />
       <br />
       <div class="checkbox"> 
-      <mat-checkbox class="check" formControlName="check1">
+      <mat-checkbox class="check" formControlName="terms">
         Zustimmung der Anmeldung
         <p>
           Ich bestimme die greenAir GmbH für die zuvor ausgewählten Jahre an
@@ -230,7 +262,7 @@
           bestimmen werde.
         </p>
       </mat-checkbox>
-      <mat-checkbox class="check" formControlName="check2">
+      <mat-checkbox class="check" formControlName="agb">
         Zustimmung der Anmeldung
         <p>
           Ich habe die allgemeinen Geschäftsbedingungen inkl. der
@@ -242,7 +274,7 @@
     </div>
       <div>
         <button mat-button matStepperPrevious>Zurück</button>
-        <button mat-button matStepperNext>Senden</button>
+        <button mat-button matStepperNext (click)="addForm()">Senden</button>
       </div>
     </form>
   </mat-step>

@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:65315",
-      "sslPort": 44305
+      "applicationUrl": "http://localhost:57904",
+      "sslPort": 44364
     }
   },
   "profiles": {
@@ -17,9 +17,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "green_api": {
+    "datingapp.API": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "launchBrowser": false,
       "launchUrl": "api/values",
       "applicationUrl": "http://localhost:5000",

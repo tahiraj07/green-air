@@ -31,22 +31,18 @@ namespace green_api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("agb")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("class_v")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("company")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("company_id")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("date")
+                    b.Property<DateTime?>("date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("email")
@@ -54,7 +50,6 @@ namespace green_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("gift_code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("iban")
@@ -62,11 +57,9 @@ namespace green_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("image1")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("image2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
@@ -86,7 +79,6 @@ namespace green_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("price_tag")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("submission_id")
@@ -98,19 +90,15 @@ namespace green_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("terms")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("time")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("unique_id")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

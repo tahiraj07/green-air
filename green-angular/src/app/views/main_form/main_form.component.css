@@ -1,12 +1,12 @@
 mat-stepper {
-    background-color: #2D594B;
+    background-color: #84A652;
     margin: 0 15% 0 15%;
     align-items: center;
     padding: 50px;
 }
 h2 {
     text-align: center; 
-    color:#00DA92; 
+    color:#D9BB37; 
     font-size: 2rem; 
     margin-top: 40px; 
 }
@@ -22,7 +22,7 @@ mat-form-field {
 }  
 .payout p {
     font-size:14px;
-    color:#00DA92;
+    color:#fff;
     font-weight: 400;
     margin-left: 20px;
 }
@@ -38,11 +38,11 @@ mat-form-field {
     gap: 20px;
 }
 ::ng-deep .mat-form-field-underline {
-    background-color: #00DA92!important; 
+    background-color: #D9BB37!important; 
     display: none!important;
 }
 mat-form-field input {
-    border: 1px solid #00DA92;
+    border: 1px solid #D9BB37;
     border-top: 0px;
     border-radius: 10px;
     padding: 15px;
@@ -65,20 +65,21 @@ mat-form-field input {
 }
 .check p {
     font-size: 14px;
-    color:#00DA92;
+    color:#D9BB37;
     font-weight: 400;
     margin-left: 20px;
 }
 button {
-    background-color: #B02AEF;
-    color: #99aaa5;
+    background-color: #D9BB37;
+    color: #fff;
     font-size: 24px;
     font-weight: 600;
-    border-radius: 0px 0px 0px 0px;
+    padding: 15px 30px;
+    border-radius: 60px;
     margin: 25px 20px 0px 0px; 
 }
 button:hover {
-    background-color: #00DA92;
+    background-color: #D9BB37;
     color: #ffffff;
     
 }

@@ -1,6 +1,4 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { WheelsComponent } from './wheels.component'; 
+import { NgModule } from '@angular/core'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -11,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Main_formComponent } from './main_form.component';
 
 @NgModule({
   imports: [
@@ -26,6 +25,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFileUploadModule,
     MatCheckboxModule
   ],
-  declarations: [WheelsComponent]
+  declarations: [ ]
 })
-export class WheelsModule { }
+export class MainFormModule { }
