@@ -24,10 +24,13 @@
     "@material/checkbox": "^14.0.0",
     "alertifyjs": "^1.13.1",
     "angular-material-fileupload": "^3.0.2",
+    "mat-table-exporter": "^10.2.4",
     "moment": "^2.29.3",
+    "ng2-file-upload": "^1.4.0",
     "ngx-mask": "^14.0.2",
     "rxjs": "^6.6.7",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

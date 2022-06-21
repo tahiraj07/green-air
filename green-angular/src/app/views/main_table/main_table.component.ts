@@ -7,7 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { debounceTime, map, takeUntil, tap } from 'rxjs/operators';
 import { DataTableModel } from 'src/app/models/components/DataTableForms';
-import { TableService } from 'src/app/_service/components/table.service';  
+import { TableService } from 'src/app/_service/components/table.service';    
+
 
 @Component({
   selector: 'app-main_table',
@@ -113,6 +114,8 @@ export class Main_tableComponent implements OnInit {
       }
     };
   }
+ 
+
   
   // private createTableData(data: DataTableModel[]) {
   //   const dataSource = new MatTableDataSource<DataTableModel>(data);

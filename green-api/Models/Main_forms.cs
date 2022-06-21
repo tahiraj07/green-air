@@ -16,9 +16,11 @@ namespace green_api.Models
         public string payee { get; set; }
         public string iban { get; set; }
         public string? gift_code { get; set; }
+        public string? PublicId { get; set; }
         public string? image1 { get; set; }
         public string? image2 { get; set; }
         public string? url { get; set; }
+        public string? url1 { get; set; }
         public string? time { get; set; }
         public DateTime? date { get; set; }
         public string? agb { get; set; }

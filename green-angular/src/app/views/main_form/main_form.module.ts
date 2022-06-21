@@ -8,8 +8,8 @@ import {MatListModule} from '@angular/material/list';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Main_formComponent } from './main_form.component';
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   imports: [
@@ -23,7 +23,8 @@ import { Main_formComponent } from './main_form.component';
     MatRadioModule,
     MatListModule,
     MatFileUploadModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FileUploadModule 
   ],
   declarations: [ ]
 })

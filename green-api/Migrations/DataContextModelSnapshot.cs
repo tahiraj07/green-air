@@ -30,6 +30,9 @@ namespace green_api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("PublicId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("agb")
                         .HasColumnType("nvarchar(max)");
 
@@ -99,6 +102,9 @@ namespace green_api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("url1")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

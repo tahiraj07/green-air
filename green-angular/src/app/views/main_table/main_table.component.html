@@ -1,6 +1,9 @@
 <app-heade-bar></app-heade-bar>
+<div class="export-container">
+	<button mat-button (click)="exporter.exportTable('csv')">DOWNLOAD</button>
+</div>
 <div class="table-section">
-  <mat-table
+  <mat-table matTableExporter  #exporter="matTableExporter"
     [dataSource]="dataSource"
     matSort
     [trackBy]="trackById"

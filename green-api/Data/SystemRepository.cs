@@ -31,9 +31,9 @@ namespace green_api.Data
           return form;
         }
 
-        public Task<bool> SaveALL()
+         public async Task<bool> SaveALL()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

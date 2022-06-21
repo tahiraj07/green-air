@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HeaderBarModule } from '../heade-bar/header-bar.module';
 import { Main_tableComponent } from './main_table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 @NgModule({ 
   declarations: [Main_tableComponent],
@@ -30,7 +31,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatCheckboxModule,
     MatTableModule,
     MatPaginatorModule,
-    HeaderBarModule
+    HeaderBarModule,
+    MatTableExporterModule
   ],
   exports: [Main_tableComponent]
 })

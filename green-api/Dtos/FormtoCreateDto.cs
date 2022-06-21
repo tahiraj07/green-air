@@ -8,15 +8,17 @@ namespace  green_api.Dtos
         public string name { get; set; }
         public string surname { get; set; }
         public string email { get; set; }
+        public string? PublicId { get; set; }
         public string? company { get; set; }
         public string? company_id { get; set; }
         public string price { get; set; }
         public string payee { get; set; }
         public string iban { get; set; }
         public string? gift_code { get; set; }
-        public string? image1 { get; set; }
-        public string? image2 { get; set; }
+        public IFormFile? image1 { get; set; }
+        public IFormFile? image2 { get; set; }
         public string? url { get; set; }
+        public string? url1 { get; set; }
         public string? time { get; set; }
         public DateTime? date { get; set; }
         public string? agb { get; set; }

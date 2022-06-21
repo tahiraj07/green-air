@@ -22,8 +22,9 @@
           placeholder="Vorname"
           type="text"
           formControlName="name"
-          required
+          required [class.invalid]="firstFormGroup.invalid && firstFormGroup.touched"
         />
+        <mat-error *ngIf="firstFormGroup.get('name')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>ID</mat-label>
@@ -33,7 +34,7 @@
           type="text"
           formControlName="submission_id"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('submission_id')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <br />
       <mat-form-field>
@@ -44,7 +45,7 @@
           type="text"
           formControlName="surname"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('surname')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <br />
       <mat-form-field>
@@ -55,10 +56,10 @@
           placeholder="E-Mail"
           formControlName="email"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('email')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <br />
-      <mat-form-field>
+      <mat-form-field *ngIf="firstFormGroup.value.option === 'Firma'">
         <mat-label>Unternehmen</mat-label>
         <input
           matInput
@@ -66,10 +67,10 @@
           type="text"
           formControlName="company"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('company')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <br />
-      <mat-form-field>
+      <mat-form-field *ngIf="firstFormGroup.value.option === 'Firma'">
         <mat-label>Umsatzsteuer-ID</mat-label>
         <input
           matInput
@@ -123,18 +124,18 @@
           placeholder="Zahlungsempfänger"
           formControlName="payee"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('payee')?.hasError('required')">Location cannot by empty</mat-error>
       </mat-form-field>
       <br />
       <mat-form-field>
         <mat-label>IBAN</mat-label>
-        <input
+        <input 
           matInput
           type="text"
           placeholder="DE123456789101234567899"
           formControlName="iban"
           required
-        />
+        /><mat-error *ngIf="firstFormGroup.get('iban')?.hasError('pattern')">IBAN is not correct.</mat-error>
       </mat-form-field>
       <br />
       <mat-form-field>
@@ -153,7 +154,7 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" enctype="multipart/form-data">
       <ng-template class="step" matStepLabel> </ng-template>
       <br />
       <h2>Fahrzeugschein hochladen</h2>
@@ -173,13 +174,14 @@
       <div class="upload">
         <div class="upload-file" style="width: 50%">
           <mat-label>Upload file</mat-label>
-          <input id="singleFile" formControlName="img1" type="file" />
+          <input id="singleFile" formControlName="image1" type="file" (change)="handleFileInput($any($event.target).files)"/>
+           
         </div>
         <br />
         <br />
         <div class="upload-file" style="width: 50%">
           <mat-label>Upload file</mat-label>
-          <input id="singleFile" formControlName="img2" type="file" />
+          <input id="singleFile" formControlName="image2" type="file" (change)="handleFileInput1($any($event.target).files)"/>
         </div>
       </div>
       <br />
@@ -274,7 +276,7 @@
     </div>
       <div>
         <button mat-button matStepperPrevious>Zurück</button>
-        <button mat-button matStepperNext (click)="addForm()">Senden</button>
+        <button mat-button matStepperNext (click)="addForm();sendEmail()">Senden</button>
       </div>
     </form>
   </mat-step>

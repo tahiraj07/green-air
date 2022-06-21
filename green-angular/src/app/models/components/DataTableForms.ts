@@ -1,5 +1,5 @@
 export class DataTableModel {
-    submission_id: number;
+    submission_id: string;
     option: string;
     name: string;
     surname: string;
@@ -10,8 +10,8 @@ export class DataTableModel {
     payee: string;
     iban: string;
     gift_code: string;
-    img1: string;
-    img2: string;
+    image1: File;
+    image2: File;
     url: string;
     time: string;
     date: Date;

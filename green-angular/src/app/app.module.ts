@@ -21,9 +21,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { HeadeBarComponent } from './views/heade-bar/heade-bar.component';
 import { HeaderBarModule } from './views/heade-bar/header-bar.module';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       Main_formComponent 
    ],
@@ -45,6 +47,7 @@ import { HeaderBarModule } from './views/heade-bar/header-bar.module';
     MainFormModule,
     HttpClientModule,
     MainTableModule,
+    MatTableExporterModule,
     HeaderBarModule
   ],
   providers: [],
