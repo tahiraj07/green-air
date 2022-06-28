@@ -25,17 +25,7 @@
           required [class.invalid]="firstFormGroup.invalid && firstFormGroup.touched"
         />
         <mat-error *ngIf="firstFormGroup.get('name')?.hasError('required')">Location cannot by empty</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>ID</mat-label>
-        <input
-          matInput
-          placeholder="ID"
-          type="text"
-          formControlName="submission_id"
-          required
-        /><mat-error *ngIf="firstFormGroup.get('submission_id')?.hasError('required')">Location cannot by empty</mat-error>
-      </mat-form-field>
+      </mat-form-field> 
       <br />
       <mat-form-field>
         <mat-label>Nachname</mat-label>
@@ -76,7 +66,7 @@
           matInput
           placeholder="Umsatzsteuer-ID"
           type="text"
-          formControlName="c_id"
+          formControlName="company_id"
           required
         />
       </mat-form-field>
@@ -88,32 +78,30 @@
         aria-label="Select an option"
         formControlName="price"
       >
-        <mat-radio-button value="8.500 €"
+        <mat-radio-button value="300€"
           ><span class="wrap-mat-radio-label"
-            >8.500 € Sofortauszahlung pro E-Fahrzeug pro Jahr (Fest-Betrag
-            I)zzgl. Wert eines ggf. eingegebenen Gutscheincodes.</span
+            >300€ Sofortauszahlung pro E-Fahrzeug pro Jahr (Fest-Betrag I) zzgl. Wert eines ggf. eingegebenen Gutscheincodes</span
           ></mat-radio-button
         ><br />
         <p>
-          Wir überprüfen umgehend Ihre Unterlagen und gehen für Sie in Vorkasse,
-          sodass die Überweisung innerhalb von 24 Stunden an Sie ausgelöst wird
-          - unabhängig vom Zeitpunkt und Höhe des Verkaufs Ihrer Quote. Bitte
-          beachten Sie, dass es je nach Bank 1-2 Tage Bearbeitungszeit zwischen
-          den Banken benötigt.
+          Wir überprüfen umgehend deine Unterlagen und gehen für dich in Vorkasse, sodass die Überweisung innerhalb von 24 Stunden an dich ausgelöst wird unabhängig vom Zeitpunkt und Höhe des Verkaufs deiner Quote. Bitte beachte, dass der Geldeingang je nach Bank 1-2 Tage dauern kann. Die Prämie kann sich durch den Wert eines ggf. eingegebenen Gutscheincodes erhöhen.
         </p>
-        <mat-radio-button value="11.500 €"
+        <mat-radio-button value="325€"
           ><span class="wrap-mat-radio-label"
-            >11.500 € pro E-Fahrzeug pro Jahr (Fest-Betrag II) zzgl. Wert eines
-            ggf. eingegebenen Gutscheincodes</span
+            >325€ Auszahlung pro E-Fahrzeug pro Jahr (Fest-Betrag II) zzgl. Wert eines ggf. eingegebenen Gutscheincodes</span
           ></mat-radio-button
         >
         <p>
-          Wir überprüfen umgehend Ihre Unterlagen und gehen für Sie in Vorkasse,
-          sodass die Überweisung innerhalb von 24 Stunden an Sie ausgelöst wird
-          - unabhängig vom Zeitpunkt und Höhe des Verkaufs Ihrer Quote. Bitte
-          beachten Sie, dass es je nach Bank 1-2 Tage Bearbeitungszeit zwischen
-          den Banken benötigt.
+          Wir überprüfen umgehend deine Unterlagen, gehen in die Abstimmung mit dem Umweltbundesamt/Zoll und verkaufen deine THG-Quote in einem Bündel an Mineralölkonzerne. Im Durchschnitt benötigen wir 12 Wochen für diesen Prozess. Die Auszahlung an dich erfolgt im Anschluss. Die Prämie kann sich durch den Wert eines ggf. eingegebenen Gutscheincodes erhöhen.Bitte beachte, dass der Geldeingang je nach Bank 1-2 Tage dauern kann.
         </p>
+        <mat-radio-button value="400€"
+        ><span class="wrap-mat-radio-label"
+          >400€ pro E-Fahrzeug pro Jahr (Flex-Betrag)</span
+        ></mat-radio-button
+      >
+      <p>
+        In unserem Optionsmodell profitierst Du direkt von dem Erlös der Quote. Dies basiert auf dem tagesaktuellen Stand zum Tag der Veräußerung. Alles wird transparent abgerechnet, wir behalten uns 17,5% Bearbeitungsgebühr für unsere oben genannten Aufwendungen ein. Bitte beachte: Sollte die Quote sinken, kann es sein, dass weniger als unsere garantierten Prämien ausgezahlt werden. Im Durchschnitt benötigen wir 12 Wochen für die Verarbeitung deiner eingereichten Daten in Zusammenarbeit mit dem Umweltbundesamt, Zoll und dem gebündelten Verkauf an Mineralölkonzerne. Die Auszahlung an dich erfolgt im Anschluss.Bitte beachte, dass der Geldeingang je nach Bank 1-2 Tage dauern kann.
+      </p>
       </mat-radio-group>
       <br />
       <mat-form-field>

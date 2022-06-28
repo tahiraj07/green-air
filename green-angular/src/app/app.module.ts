@@ -11,9 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list'; 
 import {MatRadioModule} from '@angular/material/radio';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Main_formComponent } from './views/main_form/main_form.component';
-import { MainFormModule } from './views/main_form/main_form.module';
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
 import { HttpClientModule } from '@angular/common/http';
 import { Main_tableComponent } from './views/main_table/main_table.component';
 import { MainTableModule } from './views/main_table/main-table.module';
@@ -21,8 +19,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { HeadeBarComponent } from './views/heade-bar/heade-bar.component';
 import { HeaderBarModule } from './views/heade-bar/header-bar.module';
-import { MatTableExporterModule } from 'mat-table-exporter';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+import { MatTableExporterModule } from 'mat-table-exporter'; 
+import { Main_formComponent } from './views/Wirkaufendeinzertifikat/main_form/main_form.component';
+import { MainFormModule } from './views/Wirkaufendeinzertifikat/main_form/main_form.module';  
 
 @NgModule({
   declarations: [			

@@ -10,6 +10,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { MatCheckboxModule } from '@angular/material/checkbox'; 
 import { FileUploadModule } from 'ng2-file-upload';
+import { SideNavModule } from '../../shared/side-nav/side-nav.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     MatListModule,
     MatFileUploadModule,
     MatCheckboxModule,
-    FileUploadModule 
+    FileUploadModule,
+    SideNavModule
   ],
   declarations: [ ]
 })

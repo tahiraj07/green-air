@@ -8,22 +8,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-step-icon {
     font-size: 28px;
     background: #82828200 !important;
-    border: 1px solid #D9BB37;
+    border: 1px solid #F67869;
     padding: 20px;
 }
 .mat-step-icon-selected {
     
-    background: #D9BB37 !important;
+    background: #F67869 !important;
 }
 .mat-radio-outer-circle {
     background: #fff;
     padding: 8px;
 }
 .mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
-    background-color: #D9BB37 !important;
+    background-color: #F67869 !important;
 }
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #D9BB37;
+    border-color: #F67869;
 } 
 .mat-form-field-label {
     color: #fff !important;

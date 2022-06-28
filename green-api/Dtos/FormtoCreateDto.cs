@@ -3,7 +3,7 @@ namespace  green_api.Dtos
     public class FormtoCreateDto
     {
         public int Id { get; set; }
-        public string submission_id { get; set; }
+        public int submission_id { get; set; }
         public string option { get; set; }
         public string name { get; set; }
         public string surname { get; set; }

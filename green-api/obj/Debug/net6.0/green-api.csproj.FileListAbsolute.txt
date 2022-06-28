@@ -159,3 +159,7 @@ C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\MailKit.dll
 C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\MimeKit.dll
 C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\NETCore.MailKit.dll
 C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\EPPlus.dll
+C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\ExcelDataReader.dll
+C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\OfficeOpenXml.Core.ExcelPackage.dll
+C:\Users\User\Desktop\GREENAIR\green-api\bin\Debug\net6.0\OfficeOpenXml.Extends.dll

@@ -1,44 +1,44 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortable } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { debounceTime, map, takeUntil, tap } from 'rxjs/operators';
 import { DataTableModel } from 'src/app/models/components/DataTableForms';
-import { TableService } from 'src/app/_service/components/table.service';    
-
+import { TableService } from 'src/app/_service/components/table.service';
+import { Form_detailsComponent } from './form_details/form_details.component';
 
 @Component({
   selector: 'app-main_table',
   templateUrl: './main_table.component.html',
-  styleUrls: ['./main_table.component.scss']
+  styleUrls: ['./main_table.component.scss'],
 })
 export class Main_tableComponent implements OnInit {
-
   searchText = new FormControl('');
   searching = false;
   private sub: Subscription;
-  requestedShifts: any[];
+  requestedShifts: DataTableModel[] = [];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   private _unsubscribe = new Subject<void>();
 
-  dataSource = new MatTableDataSource<any>([]);
-  dataSource$: Observable<MatTableDataSource<DataTableModel>>;
+  dataSource = new MatTableDataSource<DataTableModel>([]); 
 
   displayColumns = [];
   displayColumns$: Observable<string[]>;
   normalDisplayColumns = [
     'option',
+    'submission_id',
     'name',
     'surname',
     'email',
     'company',
-    'c_id',
+    'company_id',
     'price',
     'payee',
     'iban',
@@ -49,27 +49,27 @@ export class Main_tableComponent implements OnInit {
     'date',
     'agb',
     'terms',
-    'class',
+    'class_v',
     'price_tag',
-    'uniqueid'
+    'unique_id',
   ];
-  mediumnDisplayColumns = [
-    'name',
-    'surname'
-  ];
-  smallDisplayColumns = [
-    'name',
-  ];
-  
-  constructor(private tbservice: TableService,
-              private mediaObserver: MediaObserver,)
-   { }
+  mediumnDisplayColumns = ['name', 'surname'];
+  smallDisplayColumns = ['name'];
 
+  constructor(
+    private tbservice: TableService,
+    private mediaObserver: MediaObserver,
+    private dialog: MatDialog
+  ) {
+    this.searchText.valueChanges.pipe(debounceTime(1000)).subscribe((text) => {
+      this.applyFilter(text);
+    });
+  }
+  carType: string;
   values: any;
 
-
   ngOnInit() {
-    this.getFormData();
+    this.getFormData("M1");
     this.displayColumns$ = this.mediaObserver.asObservable().pipe(
       map(() => {
         if (this.mediaObserver.isActive('lt-sm')) {
@@ -88,42 +88,46 @@ export class Main_tableComponent implements OnInit {
     this._unsubscribe.complete();
   }
 
-  getFormData() {
-    this.sub = this.tbservice.getDataForm().subscribe(data => {
-      this.requestedShifts = data; 
-      this.dataSource = new MatTableDataSource<DataTableModel[]>(data);
+  applyFilter(filterString: string) {
+    this.dataSource.filter = filterString;
+  }
+
+  getFormData(value: string) {
+    const params = {
+      Section: value
+    }
+    this.sub = this.tbservice.getDataForm(params).subscribe((data) => {
+      this.requestedShifts = data;
+      console.log(data);
+      this.dataSource = new MatTableDataSource<DataTableModel>(data);
       this.dataSource.paginator = this.paginator;
-      //this.sort.sort({ id: 'id', start: 'asc' } as MatSortable);
-      this.dataSource.sort = this.sort;
-      this.dataSource.filterPredicate = this.customFilter();
+      this.sort.sort({ id: 'company_id', start: 'asc' } as MatSortable);
+      this.dataSource.sort = this.sort; 
+      this.searchText.setValue('');
     });
   }
 
   trackById(index: number, item: DataTableModel) {
     return item.submission_id;
   }
+ 
+  onRowClicked(row: DataTableModel) {  
+      this.dialog.open(Form_detailsComponent, {
+        width: '855px',
+        data: row
+      }).afterClosed().subscribe(differences => {
+        // if (differences) {
+        //   this.getUsersData();
+        // }
+      }); 
+  }
 
-  customFilter() {
-    return function (data: any, filter: string) {
-      const filters = filter.split(' ').map(item => new RegExp(item, 'ig'));
-      if (data.length > 0) {
-        const objValues = Object.values(data).join('');
-        return filters.every(filterString => filterString.test(objValues));
-      } else {
-        return RegExp(filter.toLowerCase()).test(data.searchString);
-      }
-    };
+  typeChange(type:any) {
+    this.selectedType.next(type);
+  }
+
+  get selectedType() {
+    return this.tbservice.selectedType;
   }
  
-
-  
-  // private createTableData(data: DataTableModel[]) {
-  //   const dataSource = new MatTableDataSource<DataTableModel>(data);
-  //   dataSource.paginator = this.paginator;
-  //   this.sort.sort({ id: 'name', start: 'asc' } as MatSortable);
-  //   dataSource.sort = this.sort;
-  //   dataSource.filterPredicate = this.customFilter();
-  //   return dataSource;
-  // }
-
 }

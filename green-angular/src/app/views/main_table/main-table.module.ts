@@ -14,9 +14,16 @@ import { HeaderBarModule } from '../heade-bar/header-bar.module';
 import { Main_tableComponent } from './main_table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { Form_detailsComponent } from './form_details/form_details.component';
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { SideNavModule } from '../shared/side-nav/side-nav.module';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({ 
-  declarations: [Main_tableComponent],
+  declarations: [Main_tableComponent,
+                 Form_detailsComponent],
   imports: [ 
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,7 +39,12 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     MatTableModule,
     MatPaginatorModule,
     HeaderBarModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    MatIconModule,
+    MatSortModule,
+    MatDialogModule,
+    SideNavModule,
+    MatSelectModule
   ],
   exports: [Main_tableComponent]
 })

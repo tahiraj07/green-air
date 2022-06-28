@@ -1,0 +1,163 @@
+<h1 mat-dialog-title>Form Information</h1>
+<form [formGroup]="editForm">
+  <mat-dialog-content>
+    <div class="input-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Vorname</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.name }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Nachname</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.surname }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Option</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.option }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>ID</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.unique_id }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.email }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Unternehmen</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.company }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>UmsatzsteuerID</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.company_id}}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Pramie</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.price}}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Zahlungsempfaenger</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.payee }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>IBAN</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.iban}}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Vorname</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.name }}"
+          automation-id="input-current-user-fname"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Gutscheincode</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.gift_code}}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Vorderseite</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.url }}" 
+        />
+      </mat-form-field>
+      <img src="{{formData.url}}">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Rueckseite</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.url1 }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Dauer</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.time }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>AGB</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.agb }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Zustimmung</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.terms }}" 
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Klasse</mat-label>
+        <input
+          matInput
+          type="text"
+          value="{{ formData.class_v}}" 
+        />
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button
+      mat-button
+      type="button"
+      mat-dialog-close
+      automation-id="btn-close-edit-user-modal"
+    >
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>

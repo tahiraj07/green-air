@@ -1,11 +1,11 @@
-export class DataTableModel {
+export interface DataTableModel {
     submission_id: string;
     option: string;
     name: string;
     surname: string;
     email: string;
     company: string;
-    c_id: string;
+    company_id: string;
     price: string;
     payee: string;
     iban: string;
@@ -17,7 +17,8 @@ export class DataTableModel {
     date: Date;
     agb: string;
     terms: string;
-    class: string;
+    class_v: string;
     price_tag: string;
-    uniqueid: string;
+    unique_id: string;
+    url1: string;
 }

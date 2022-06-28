@@ -1,4 +1,31 @@
- 
+.main-body {
+    display: flex;
+    flex-wrap: wrap;
+    app-side-nav {
+        width: 50px;
+    }
+.right-side { 
+    width: 95%;
+.main-header {
+    display: flex;
+    flex-wrap: wrap; 
+        .export-container {
+            padding: 10px 100px;
+            width: 30%;
+           .exp-btn{ 
+            background-color: #F67869;
+            color: #fff; 
+            padding: 5px;
+        }  
+        } 
+        .search {
+            padding-left: 100px;
+            width: 30%;
+            .lbl-search {
+                color: #F67869;
+            }
+        }
+}
 .mat-cell,
 .mat-header-cell {
     word-wrap: initial;
@@ -21,9 +48,9 @@
     padding: 10px;
     .custom-table { 
         mat-row:nth-of-type(even), tr[mat-row]:nth-of-type(even) {
-            background-color: #D9BB37;
+            background-color: #F67869;
             & + .detail-row {
-                background-color: #D9BB37;
+                background-color: #F67869;
             }
             &.selected {
                 background-color: #e0ffff;
@@ -74,4 +101,5 @@
     padding-left: 8px; 
   }
 }
- 
+}
+}

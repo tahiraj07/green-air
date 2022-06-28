@@ -5,7 +5,7 @@ namespace green_api.Models
     public class Main_forms
     {
         public int Id { get; set; }
-        public string submission_id { get; set; }
+        public int submission_id { get; set; }
         public string option { get; set; }
         public string name { get; set; }
         public string surname { get; set; }

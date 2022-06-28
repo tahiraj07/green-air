@@ -14,7 +14,7 @@ export class FormService {
 
  
   headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-  formData: DataTableModel = new DataTableModel();
+  //formData: DataTableModel = new DataTableModel();
 constructor(private isystem: IsystemService) { }
  
 
@@ -29,7 +29,7 @@ addtask(form: DataTableModel,fileToUpload: File,fileToUpload1: File) {
   formData.append("submission_id", form.submission_id);
   formData.append("email", form.email);
   formData.append("company", form.company);
-  formData.append("c_id", form.c_id);
+  formData.append("company_id", form.company_id);
   formData.append("price", form.price);
   formData.append("payee", form.payee);
   formData.append("iban", form.iban);
@@ -48,9 +48,9 @@ handleError(error: HttpErrorResponse) {
 
 sendEmail(email: any, fileToUpload: File) { 
   const formData = new FormData();  
-  formData.append("ToEmail", email);
-  formData.append("Subject", "KLIMA QUOTE");
-  formData.append("Body", "Hello, this is a test");
+  formData.append("ToEmail", email.ToEmail);
+  formData.append("Subject", email.Subject);
+  formData.append("Body", email.Body);
   formData.append("Attachments", fileToUpload);
   return this.isystem.post<BaseResponseModel<MailModel[]>>('mail/send/', formData,{ headers: this.headers }).pipe(catchError(this.handleError));
 }
